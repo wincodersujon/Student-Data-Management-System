@@ -1,6 +1,10 @@
 <?php session_start();
 //error_reporting(0);
 include('includes/dbconnection.php');
+if (empty($_SESSION['aid'])) {
+    header('location:logout.php');
+    exit(); // This script stops after redirect
+}
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +29,8 @@ include('includes/dbconnection.php');
 <body>
     <form method="post">
         <div id="wrapper">
-
+            <!-- Navigation -->
+            <?php include('leftbar.php') ?>;
             <!--nav-->
             <div id="page-wrapper">
                 <div class="row">

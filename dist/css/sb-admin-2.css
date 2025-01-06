@@ -269,7 +269,86 @@ h2 {
 }
 
 /* end */
+/* pass-recovery start */
 
+.recovery-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.panel {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.panel-heading {
+    background-color: #28a745;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+.panel-body {
+    padding: 25px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.btn-recovery {
+    background-color: #28a745;
+    color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.btn-recovery:hover {
+    background-color: #218838;
+}
+
+.alert {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.text-center a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+
+/* end */
 .flot-chart {
     display: block;
     height: 400px;

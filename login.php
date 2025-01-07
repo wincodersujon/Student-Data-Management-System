@@ -56,6 +56,7 @@ if(isset($_POST['submit'])) {
             <div class="form-group">
                 <label for="password">Password</label>
                 <input class="form-control" id="password" name="password" type="password" placeholder="Enter your password" required>
+                <a href="password-recovery.php">Password Recovery</a>
             </div>
 
             <button type="submit" name="submit" class="btn-login">Login</button>

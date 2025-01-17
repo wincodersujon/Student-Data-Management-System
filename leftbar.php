@@ -7,7 +7,7 @@
                 class="icon-bar"></span> <span class="icon-bar"></span> <span
                 class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="">Student Data Management System</a>
+        <a class="navbar-brand" href="dashboard.php">Student Data Management System</a>
     </div>
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
@@ -15,6 +15,17 @@
 
                 <li>
                     <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-file fa-fw"></i> Course<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="add-course.php">Add Course</a>
+                        </li>
+                        <li>
+                            <a href="manage-courses.php">View</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>

@@ -12,6 +12,7 @@ if (empty($_SESSION['aid'])) {
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
     <!-- Bootstrap Core CSS -->
@@ -41,12 +42,12 @@ if (empty($_SESSION['aid'])) {
                 </div>
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading"></div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-lg-12">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">SDMS</div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
 
 
                                         <!---Courses ----->
@@ -57,12 +58,26 @@ if (empty($_SESSION['aid'])) {
                                                         <div class="col-xs-3">
                                                             <i class="fa fa-file fa-5x"></i>
                                                         </div>
+
+                                                        <?php $query = mysqli_query($con, "SELECT cid FROM tbl_course");
+                                                        $listedcourses = mysqli_num_rows($query);
+
+                                                        ?>
+
+
                                                         <div class="col-xs-9 text-right">
-                                                            <div class="huge"></div>
+                                                            <div class="huge"><?php echo htmlentities($listedcourses); ?></div>
                                                             <div>Listed Courses</div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <a href="manage-courses.php">
+                                                    <div class="panel-footer">
+                                                        <span class="pull-left">View Details</span>
+                                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </a>
                                             </div>
                                         </div>
 
@@ -166,19 +181,49 @@ if (empty($_SESSION['aid'])) {
         </div>
 
         <script src="bower_components/jquery/dist/jquery.min.js"
-            type="text/javascript"></script>
+                type="text/javascript"></script>
 
 
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"
-            type="text/javascript"></script>
+            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"
+                type="text/javascript"></script>
 
-        <!-- Metis Menu Plugin JavaScript -->
-        <script src="bower_components/metisMenu/dist/metisMenu.min.js"
-            type="text/javascript"></script>
+            <!-- Metis Menu Plugin JavaScript -->
+            <script src="bower_components/metisMenu/dist/metisMenu.min.js"
+                type="text/javascript"></script>
 
-        <!-- Custom Theme JavaScript -->
-        <script src="dist/js/sb-admin-2.js" type="text/javascript"></script>
-    </form>
-</body>
+            <!-- Custom Theme JavaScript -->
+            <script src="dist/js/sb-admin-2.js" type="text/javascript"></script>
 
-</html>
+            <script>
+                function courseAvailability() {
+                    $("#loaderIcon").show();
+                    jQuery.ajax({
+                        url: "course_availability.php",
+                        data: 'cshort=' + $("#cshort").val(),
+                        type: "POST",
+                        success: function(data) {
+                            $("#course-availability-status").html(data);
+                            $("#loaderIcon").hide();
+                        },
+                        error: function() {}
+                    });
+                }
+
+                function coursefullAvail() {
+                    $("#loaderIcon").show();
+                    jQuery.ajax({
+                        url: "course_availability.php",
+                        data: 'cfull=' + $("#cfull").val(),
+                        type: "POST",
+                        success: function(data) {
+                            $("#course-status").html(data);
+                            $("#loaderIcon").hide();
+                        },
+                        error: function() {}
+                    });
+                }
+            </script>
+        </form>
+    </body>
+
+    </html>

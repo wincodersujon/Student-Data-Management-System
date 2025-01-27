@@ -28,6 +28,18 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="#"><i class="fa fa-files-o fa-fw"></i>Subject<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="add-subject.php">Add Subject</a>
+                        </li>
+                        <li>
+                            <a href="manage-subjects.php">View</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li>
                     <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                 </li>
             </ul>
